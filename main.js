@@ -58,11 +58,8 @@ findPerson('Mary');
 // $"The person you are looking for does not exist in our records."
 
 const doesUserExist = (fullName) => {
-  console.log(fullName);
-
   const nameIndex = arrayOfPeople.findIndex((person) => {
     fullUserName = `${person.firstName} ${person.lastName}`.toLowerCase();
-    console.log(fullUserName);
     return fullUserName === fullName.toLowerCase();
   });
   if (nameIndex === -1) {
