@@ -48,10 +48,15 @@ console.log(arrayOfPeople);
 
 const findPerson = (firstName) => {
   const result = arrayOfPeople.find((person) => person.firstName === firstName);
-  console.log(result);
+  if (result === undefined) {
+    console.log(`${firstName} does not exist in our database.`);
+  } else {
+    console.log(result);
+  }
 };
 
 findPerson('Mary');
+findPerson('Kevin');
 
 // $Write a function that will determine if a person exists in the Array of
 // $People. If the person exists, log that person, if now, log a message saying
@@ -70,3 +75,4 @@ const doesUserExist = (fullName) => {
 };
 
 doesUserExist('Dan Payne');
+doesUserExist('Robin Dillard');
