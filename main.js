@@ -5,17 +5,30 @@ const transactions = [1250, 950, -600, 2000, -650, -130, 870, 1300, -580];
 const firstWithdrawal = transactions.find((transaction) => transaction < 0);
 
 console.log(transactions);
-console.log(firstWithdrawal);
+console.log(
+  `By using the find() method, we can easily see that the first transaction that posted as a withdrawal was ${firstWithdrawal}.`
+);
 
 //$ Write a function that finds the index of the transaction being searched.
 const findTransaction = (array, searchValue) => {
   const transactionIndex = array.findIndex(
     (transaction) => transaction === searchValue
   );
-  console.log(transactionIndex);
+  if (transactionIndex === -1) {
+    console.log(
+      `We could not find a transaction in the amount of $${searchValue}.`
+    );
+  } else {
+    console.log(
+      `The transaction of $${searchValue} has an index of`,
+      transactionIndex,
+      '.'
+    );
+  }
 };
 
 findTransaction(transactions, 2000);
+findTransaction(transactions, 2350);
 
 // $Create an arrayOfPersons that contains multiple "people" objects. You can
 // $simply copy/paste the person object you made above multiple times. Feel free
